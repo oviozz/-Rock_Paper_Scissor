@@ -7,7 +7,7 @@ print(" WELCOME TO ROCK,PAPER,SCISSORS")
 number = random.randint(0,3)
 list = ["Rock","Paper","Scissor"]
 print("Choose One:",", ".join(list))
-
+answer = ['yes','no']
 
 Playagain = "yes"
 while Playagain == "yes":
@@ -93,13 +93,18 @@ while Playagain == "yes":
 
     Playagain = input("Do you want to play again: yes/no: ").lower()
 
+    #ask user input to play (if not yes or no) return not a valid response
+    while Playagain not in answer:
+        print("Not a Valid Response")
+        Playagain = input("Do you want to play again: yes/no: ").lower()
+
     if Playagain == "no":
         if you_Score == bot_Score:
             print("****************You Tied!****************")
         if you_Score > bot_Score:
             print("****************You Win!****************")
         if you_Score < bot_Score:
-            print("****************You Win!****************")
+            print("****************Bot Win!****************")
 
         print("**********Thanks for playing!***********")
         print("**********Created by Prazwal************")
